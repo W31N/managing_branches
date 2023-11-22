@@ -2,17 +2,17 @@ import java.util.Random;
 
 class Main{
     public static void main(String[] args) {
-        int size = 3;
+        int size = 5;
         int[][] firstMatrix = new int[size][size];
         int[][] secondMatrix = new int[size][size];
         fillMatrix(firstMatrix);
-        fillMatrix(secondMatrix);
+//        fillMatrix(secondMatrix);
         int[][] unitMatrix = getUnitMatrix(size);
         printMatrix(firstMatrix);
         System.out.println();
-        printMatrix(secondMatrix);
+        printMatrix(unitMatrix);
         System.out.println();
-        int[][] result = multiplyMatrices(firstMatrix, secondMatrix);
+        int[][] result = multiplyMatrices(firstMatrix, unitMatrix);
         printMatrix(result);
     }
 
