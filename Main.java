@@ -1,18 +1,17 @@
 import java.util.Random;
-
-class Main{
+class Main {
     public static void main(String[] args) {
-        int size = 5;
+        int size = 3;
         int[][] firstMatrix = new int[size][size];
         int[][] secondMatrix = new int[size][size];
         fillMatrix(firstMatrix);
-//        fillMatrix(secondMatrix);
+        fillMatrix(secondMatrix);
         int[][] unitMatrix = getUnitMatrix(size);
         printMatrix(firstMatrix);
         System.out.println();
-        printMatrix(unitMatrix);
+        printMatrix(secondMatrix);
         System.out.println();
-        int[][] result = multiplyMatrices(firstMatrix, unitMatrix);
+        int[][] result = multiplyMatrices(firstMatrix, secondMatrix);
         printMatrix(result);
     }
 
@@ -44,6 +43,7 @@ class Main{
         }
         return unitMatrix;
     }
+
     public static void fillMatrix(int[][] matrix) {
         Random random = new Random();
         for (int i = 0; i < matrix.length; i++) {
@@ -52,6 +52,7 @@ class Main{
             }
         }
     }
+
     public static void printMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
