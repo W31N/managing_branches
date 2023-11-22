@@ -3,7 +3,18 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
-
+        int size = 3;
+        int[][] firstMatrix = new int[size][size];
+        int[][] secondMatrix = new int[size][size];
+        fillMatrix(firstMatrix);
+        fillMatrix(secondMatrix);
+        int[][] unitMatrix = getUnitMatrix(size);
+        printMatrix(firstMatrix);
+        System.out.println();
+        printMatrix(secondMatrix);
+        System.out.println();
+        int[][] result = multiplyMatrices(firstMatrix, secondMatrix);
+        printMatrix(result);
     }
 
     public static int[][] multiplyMatrices(int[][] matrixA, int[][] matrixB) {
@@ -38,8 +49,16 @@ public class Main {
         Random random = new Random();
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = random.nextInt(100, 1000);
+                matrix[i][j] = random.nextInt(1, 10);
             }
+        }
+    }
+    public static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
